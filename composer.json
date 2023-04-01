@@ -1,0 +1,49 @@
+{
+  "name": "skyblack/syrup-input",
+  "description": "Syrup - the extensions library for the Symfony framework",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Astrodog",
+      "email": "skyblackec@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Syrup\\Input\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Syrup\\Input\\Tests\\": "tests/",
+      "Syrup\\Input\\TestApp\\": "tests/app/src"
+    }
+  },
+  "require": {
+    "php": ">=8.0",
+    "symfony/http-kernel": ">=6.0",
+    "symfony/security-bundle": ">=6.0",
+    "wikimedia/composer-merge-plugin": ">=2.0",
+    "symfony/dependency-injection": "^6.2"
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit --colors=always --testdox tests"
+  },
+  "config": {
+    "allow-plugins": {
+      "wikimedia/composer-merge-plugin": true
+    }
+  },
+  "extra": {
+    "merge-plugin": {
+      "include": [
+        "composer.local.json"
+      ]
+    }
+  },
+  "require-dev": {
+    "symfony/test-pack": ">=1.1",
+    "symfony/framework-bundle": ">=6.0",
+    "symfony/yaml": ">=6.0"
+  }
+}

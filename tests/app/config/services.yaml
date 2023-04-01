@@ -1,0 +1,17 @@
+services:
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  Syrup\Input\TestApp\Controller\:
+    resource: '../src/Controller'
+
+  Syrup\Input\EventSubscribers\ControllerSubscriber:
+    arguments:
+      $json: true
+      $data: true
+      $csrf: true
+
+  Syrup\Input\TestApp\EventSubscribers\ResponseSubscriber:
+    tags:
+      - { name: kernel.event_subscriber }

@@ -1,0 +1,4 @@
+/vendor/
+.idea
+composer.local.json
+/tests/app/var
